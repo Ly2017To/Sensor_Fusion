@@ -1,0 +1,30 @@
+Analysis Based on Results:
+
+1.Lidar
+
+Take the lidar-based TTC calculated with FAST(detector)/BRISK(descriptor) from the 5th to the 7th measurements, the values are 12.19, 7.5 and 34.34 respectively. (results are shown in green color in the file TTC_evaluation.xlsx).
+
+In the folder ./results_image/lidar/, there are three concecutive lidar images: fast_brisk_lidar05.png, fast_brisk_lidar06.png and fast_brisk_lidar07.png. Based on these three images, we can observe that the distributions of the lidar data varies a lot in space in these images. The reason is described as the follows.
+
+From the 1th to the 5th measurements, the value minXPrev-minXCurr is around 0.06 or 0.07, the lidar-based TTC is between 12 and 15; 
+
+From the 5th to the 6th measurements, the value minXPrev-minXCurr is around 0.1, meanning that the point of distance value minXCurr is too close to the car. Thus, the lidar-based TTC is 7.67, which is much smaller than 12.
+
+From the 6th to the 7th measurements, the value minXPrev-minXCurr is around 0.02, meanning that the point of distance value minXCurr is too far to the car. Thus, the lidar-based TTC is 34,34, which is much larger than 12.
+
+Thus, we can conclude that there are cases the filter designed does not filter out the outliers of the lidar point cloud, although most of the cases the filter works pretty well. The filter is designed with the assumption that the lidar points is distributed in space following normal distribution. 
+
+2.Camera: 
+
+Take the camera-based TTC calculated with HARRIS(detector)/BRISK(descriptor) of the 3rd, 5th, 10th, 13th, 18th measurement, the values are -14.17, 44.91, -153.93, 568.38 and -inf respectively. (results are shown in blue color in the file TTC_evaluation.xlsx). In the folder ./results_image/camera/, the corresponding images are stored. The reason is that in these cases, we use the value of medianDistRatio is not applicable when calculaing camera-based TTC. Thus, we can conclude that using the the value of medianDistRato works well most cases, but there are exceptions. We also need to carefully select the pair of detector and descriptor.
+
+3.Summary:
+
+In summary, computing the TTC based on the results obtained from two type of sensors is more reliable than only one type of sensor. 
+
+Recall: Based on the results I have obtained in the middle term project, I choose the following three detector and descriptor combinations (Detector/Descriptor):
+
+FAST/BRISK; FAST/BRIEF; FAST/ORB;
+
+I choose to use FAST/BRISK. The reason is that this pair of detector and descriptor the only three pairs above obtains all the 18 measurements of TTC. Also, based the measurements of TTC obtained from data collected on both sensors, we can obtain reasonable(safe) TTC values.
+
