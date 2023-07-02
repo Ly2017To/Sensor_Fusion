@@ -1,10 +1,13 @@
-<style>body {text-align: justify}</style>
-
 ## Introduction
 
-This course works on integrating data from multiple sensors into a world picture. 
+<p align='justify'>
+This course works on integrating data from multiple sensors into a world picture.
+</p> 
 
+<p align='justify'>
 Lidar, Radar and Camera are the sensors introduced. Lidar stands for light detection and ranging, which uses infrared wave to detect the distance of the objects around. Radar stands for radio dection and ranging, which uses radio waves to measure the speed of the objects based on doppler effect and generate radar maps for localization. Camera collects image data or video segments of the environment. The following table compares the differences between the three sensors from various perspectives. 
+</p> 
+
 
 |               | Camera        | Lidar         | Radar         |
 | ------------- |:-------------:|:-------------:|:-------------:|
