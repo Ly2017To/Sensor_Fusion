@@ -19,14 +19,17 @@ Hardware is changing all over the time. Finding the best sensor solution is an o
 
 ## Lidar Obstacle Detection
 
+To detemine the distance of an object, lidar sends out a beam of light and measures how long it takes to come back. To get the distance of each point in the field of view, lidar scans beams of laser across the field of view. A set of reflections that lidar measured is a point cloud. Each data in a point cloud is represented by (x,y,z,I), where x,y and z are Cartesian coordinates that express its spatial location and I is intensity that tells the reflective property. The Lidar cordinate system is the same as the car's local coordinate system. The x diretion points out front of the car and the other two directions can be found by the "Right Hand Rule". The position to mount the lidar depends on the required field of view in the application. The point cloud data can be collected by recording lidar data while driving. The point cloud data can be used to track object, predict behaviour of objects, classify objects and so on. 
+
+Segmentation is a process of associating points with objects. We introduce the process of seperating obstacles and roads from point cloud data using RANSEC (random sample consensus) algorithm. It is an iteractive method that picks subset of points randomly and fits a model for each iteration. The iteration with the most inliers to the model is the best. 
+
+Clustering draws the boundery around points, which means to group points by how close they are to each other. KD-tree is the backbone algorithm of Euclidean clustering algorithm of PCL.
 
 
 
 
 
 ## Radar
-
-
 
 
 
