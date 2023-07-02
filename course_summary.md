@@ -1,3 +1,5 @@
+<style>body {text-align: justify}</style>
+
 ## Introduction
 
 This course works on integrating data from multiple sensors into a world picture. 
@@ -25,22 +27,24 @@ Segmentation is a process of associating points with objects. We introduce the p
 
 Clustering draws the boundery around points, which means to group points by how close they are to each other. KD-tree is a binary tree that organizes k-dimensional data points and its operations include insertion, deletion, search and so on. Each node is inserted by comparing between dimensions alternatively. To delete a node, we need to first locate the node and then delete this node without breaking the KD-tree property. The search we are doing here is to find all the points in a KD-tree that within a certain distance to a target point. This search process can be achieved by traversing a KD-tree and check whether each point is close enougth to the target on the path. KD-tress is also the backbone algorithm of Euclidean clustering algorithm of PCL. The process of this algorithm is shown below.
 
-EuclideanCluster():
-	list of clusters
-	iterate through each point
-		if point has not been processed
-			create cluster
-			Proximity(point, cluster)
-			cluster add clusters
-	return clusters
+    EuclideanCluster():
+        list of clusters
+	    iterate through each point
+		    if point has not been processed
+			    create cluster
+			    Proximity(point, cluster)
+			    cluster add clusters
+	    return clusters
 
-Proximity(point, cluster):
-	if point has not been processed
-		mark point as processed
-		add point to cluster
-		nearby points = kdTreeCloseEnough(point)
-		iterate through each nearby point
-			Proximity(nearby point, cluster)
+
+    Proximity(point, cluster):
+        if point has not been processed
+		    mark point as processed
+		    add point to cluster
+		    nearby points = kdTreeCloseEnough(point)
+		    iterate through each nearby point
+			    Proximity(nearby point, cluster)
+
 
 
 
