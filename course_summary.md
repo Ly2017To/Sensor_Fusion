@@ -23,7 +23,25 @@ To detemine the distance of an object, lidar sends out a beam of light and measu
 
 Segmentation is a process of associating points with objects. We introduce the process of seperating obstacles and roads from point cloud data using RANSEC (random sample consensus) algorithm. It is an iteractive method that picks subset of points randomly and fits a model for each iteration. The iteration with the most inliers to the model is the best. 
 
-Clustering draws the boundery around points, which means to group points by how close they are to each other. KD-tree is the backbone algorithm of Euclidean clustering algorithm of PCL.
+Clustering draws the boundery around points, which means to group points by how close they are to each other. KD-tree is a binary tree that organizes k-dimensional data points and its operations include insertion, deletion, search and so on. Each node is inserted by comparing between dimensions alternatively. To delete a node, we need to first locate the node and then delete this node without breaking the KD-tree property. The search we are doing here is to find all the points in a KD-tree that within a certain distance to a target point. This search process can be achieved by traversing a KD-tree and check whether each point is close enougth to the target on the path. KD-tress is also the backbone algorithm of Euclidean clustering algorithm of PCL. The process of this algorithm is shown below.
+
+EuclideanCluster():
+	list of clusters
+	iterate through each point
+		if point has not been processed
+			create cluster
+			Proximity(point, cluster)
+			cluster add clusters
+	return clusters
+
+Proximity(point, cluster):
+	if point has not been processed
+		mark point as processed
+		add point to cluster
+		nearby points = kdTreeCloseEnough(point)
+		iterate through each nearby point
+			Proximity(nearby point, cluster)
+
 
 
 
