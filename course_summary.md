@@ -98,5 +98,16 @@ Kalman Filter estimates the continuous state of system that gives a unimodal dis
 </p>
 
 <p align='justify'>
-The variables for Kalman Filter to estimate are states, which are observable states and hidden states. From the observations of observable states, we can estimate the hidden states. For designing Kalman Filter, we need state transfer functions and measurement functions. 
+The variables for Kalman Filter to estimate are states, which are observable states and hidden states. From the observations of observable states, we can estimate the hidden states. For designing Kalman Filter, we need state transfer functions and measurement functions. The matrix form of Kalman Filter is shown as follows.
 </p>
+
+
+** Kalman Filter Variables **
+$X$ : Estimate
+$P$ : Uncertainty Covariance
+$F$ : State Transition Matrix
+$U$ : Motion Vector
+$Z$ : Measurement
+$H$ : Measurement Function
+$R$ : Measurement Noise
+$I$ : Identity Matrix
