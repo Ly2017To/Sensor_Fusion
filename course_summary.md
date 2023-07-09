@@ -113,6 +113,16 @@ $R$ : Measurement Noise
 $I$ : Identity Matrix  
 
 ** Prediction **  
-$X_predict = F \cdot X$  
- 
+$X^{\prime} = F \cdot X$  
+$P = F \cdot P F^T$  
+
+
+** Measurement Update **  
+$Y = Z - H \cdot X$ //error  
+$S = H \cdot P H^T + R$  
+$K = P \cdot H^T \cdot S^{-1}$ //gain  
+$X^{\prime} = X + K \cdot Y$
+$P^{-1} = (I - K \cdot H ) \cdot P$
+
+
 
