@@ -102,7 +102,7 @@ The variables for Kalman Filter to estimate are states, which are observable sta
 </p>
 
 
-** Kalman Filter Variables **  
+**Kalman Filter Variables**  
 $X$ : Estimate  
 $P$ : Uncertainty Covariance  
 $F$ : State Transition Matrix  
@@ -110,17 +110,19 @@ $U$ : Motion Vector
 $Z$ : Measurement  
 $H$ : Measurement Function  
 $R$ : Measurement Noise  
-$I$ : Identity Matrix  
+$I$ : Identity Matrix 
+$Y$ : Error  
+$K$ : Gain
 
-** Prediction **  
+**Prediction**  
 $X^{\prime} = F \cdot X$  
 $P = F \cdot P F^T$  
 
 
-** Measurement Update **  
-$Y = Z - H \cdot X$ //error  
+**Measurement Update**  
+$Y = Z - H \cdot X$  
 $S = H \cdot P H^T + R$  
-$K = P \cdot H^T \cdot S^{-1}$ //gain  
+$K = P \cdot H^T \cdot S^{-1}$  
 $X^{\prime} = X + K \cdot Y$
 $P^{-1} = (I - K \cdot H ) \cdot P$
 
