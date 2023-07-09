@@ -66,13 +66,37 @@ Lidar data also needs to be downsampled or filtered. The pipeline to process the
 
 ## Radar
 
+<p align='justify'>
+Radar is capable of detecting velocity and spatial information of objects at long range accurately. In addition, it can operate in poor weather conditions. FMCW (Frequency Modulated Continuous Wave) radar is the most commonly used for automotive applications. It is low cost and able to measure speed and location simultaneously. FMCW is a continuously transmitting signal in which its frequency changes linearly with time. It's shape is of saw-tooth. The antenna is for transmitting and receiving radar signal. RCS (radar cross section) is defined as the size and ability of target to reflect radar energy and it is closely related to how targets reflect radar signals.
+</p>
+
+<p align='justify'>
+Except the signals from the objects of interest, radar also receives noise. Clutter is a term used for unwanted echos in the context of autonomous driving. Clutter might be relections of the road or unrelevant objects. Genarally, a noise threshold is needed for radar to filter out noise signals. CFAR is a solution to keep the false alarm rate lower without losing valid targets by varing the threshold based on target surroundings. 
+</p>
+
+
 
 
 
 ## Camera
 
 
+<p align='justify'>
+
+</p>
+
+<p align='justify'>
+
+</p>
 
 
 
 ## Kalman Filters
+
+<p align='justify'>
+Kalman Filter estimates the continuous state of system that gives a unimodal distribution, which is a probability distribution with one peak. In Kalman Filter, this distribution is given by Gaussian distribution, which is characterized by mean and variance. Our task is to maitain a best estimation of mean and variance of the objects that we are tracking. The variance measures the uncertainty about the distribution. We iterate measurement update and prediction by applying Bayes Rule, where the measurements and predictions are all Gaussian distributions. The measurement update step is the multiplication of the distribution of prediction and measurement. In terms of statistics, the posterior is propotional to the product of prior and the likelihood. The prediction step is also called motion update, which is characterized by the addition of mean and variance of distributions.
+</p>
+
+<p align='justify'>
+The variables for Kalman Filter to estimate are states, which are observable states and hidden states. From the observations of observable states, we can estimate the hidden states. For designing Kalman Filter, we need state transfer functions and measurement functions. 
+</p>
