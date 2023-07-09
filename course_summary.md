@@ -76,7 +76,7 @@ Except the signals from the objects of interest, radar also receives noise. Clut
 
 
 <p align='justify'>
-There is a very good resource to learn about [mmWave Radar Sensors](https://www.ti.com/video/series/mmwave-training-series.html).
+There is a very good resource to learn about range, velocity and angle of arrival estimation, as well as systems about FMCW. [mmWave Radar Sensors](https://www.ti.com/video/series/mmwave-training-series.html).
 </p>
 
 
