@@ -126,8 +126,9 @@ $P = F \cdot P \cdot F^T$
 $Y = Z - H \cdot X$  
 $S = H \cdot P \cdot H^T + R$  
 $K = P \cdot H^T \cdot S^{-1}$  
-$X^{\prime} = X + K \cdot Y$
+$X^{\prime} = X + K \cdot Y$  
 $P^{-1} = (I - K \cdot H ) \cdot P$
+
 
 
 
