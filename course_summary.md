@@ -80,18 +80,19 @@ There is a very good resource to learn about range, velocity and angle of arriva
 </p>
 
 
-
 ## Camera
 
+<p align='justify'>
+It makes sense to have multiple cameras on the self driving car because of different use cases. For lens, thinner lens are for far field view and wider lens are for near field view. There are also chips to cover different spectrums for different applications. For exmple, night time driving and high dynamic ranges. Mostly in the near fields, camera-only depth detection can be reliable. For multiple cameras, calibration with respect to a common time and place is needed to map images into a global frame.  
+</p>
 
 <p align='justify'>
-
+To engineering a collision avoidance system, we first transform the problem from how to avoid collisions to how to calculate the time until collision occurs. For lidar measurements, it is necessary to filter out the unwanted points to calculate the time to collsion based on motion model. In real life application, unwanted points can be filtered out based on steering angle and curvature of lanes. For cameras, we can measure the time to collision without measuring distance. By using the pinhole camera model and some laws of projection to relate metric distance in the real world to the relative distance on the image plane. The above estimated distance is refined by bouding box techniques based on deep learning. Then the time to collision can be calculated based on a set of corresponding points in successive camera images.   
 </p>
 
 <p align='justify'>
 
 </p>
-
 
 
 ## Kalman Filters
@@ -129,6 +130,8 @@ $K = P \cdot H^T \cdot S^{-1}$
 $X^{\prime} = X + K \cdot Y$  
 $P^{-1} = (I - K \cdot H ) \cdot P$
 
+<p align='justify'>
 
+</p>
 
 
