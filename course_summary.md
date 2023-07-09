@@ -75,6 +75,9 @@ Except the signals from the objects of interest, radar also receives noise. Clut
 </p>
 
 
+<p align='justify'>
+There is a very good resource to learn about [mmWave Radar Sensors](https://www.ti.com/video/series/mmwave-training-series.html).
+</p>
 
 
 
@@ -116,12 +119,12 @@ $K$ : Gain
 
 **Prediction**  
 $X^{\prime} = F \cdot X$  
-$P = F \cdot P F^T$  
+$P = F \cdot P \cdot F^T$  
 
 
 **Measurement Update**  
 $Y = Z - H \cdot X$  
-$S = H \cdot P H^T + R$  
+$S = H \cdot P \cdot H^T + R$  
 $K = P \cdot H^T \cdot S^{-1}$  
 $X^{\prime} = X + K \cdot Y$
 $P^{-1} = (I - K \cdot H ) \cdot P$
