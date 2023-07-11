@@ -71,6 +71,15 @@ Radar is capable of detecting velocity and spatial information of objects at lon
 </p>
 
 <p align='justify'>
+The transmitting antenna transmits chirps to the moving target. The receiving antenna receives chirps reflected from the target. The transmitted chirps and reflected chirps are input to a mixer, which outputs a signal of frequency and phase that are differences of the frequency and phase of the input signals. To measure the range of target, applying FFT to the output signal to get the frequency, from which the range can be estimated with the parameters of the chirp. The higher is this frequency, the further is the target. This is called Range FFT. 
+</p>
+
+<p align='justify'>
+The speed of the object is proportional to the phase change of the signal at the frequency mentioned above. To measure the speed of this object, we need to transmit and receive multiple chirps and then apply FFT to a group of FFT value of the output signal obtained at the frequency mentioned above to extract the phase information needed. This is called Doppler FFT.
+</p>
+
+
+<p align='justify'>
 Except the signals from the objects of interest, radar also receives noise. Clutter is a term used for unwanted echos in the context of autonomous driving. Clutter might be relections of the road or unrelevant objects. Genarally, a noise threshold is needed for radar to filter out noise signals. CFAR is a solution to keep the false alarm rate lower without losing valid targets by varing the threshold based on target surroundings. 
 </p>
 
