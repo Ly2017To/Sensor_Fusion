@@ -109,7 +109,7 @@ Kalman Filter estimates the continuous state of system that gives a unimodal dis
 </p>
 
 <p align='justify'>
-The variables for Kalman Filter to estimate are states, which are observable states and hidden states. From the observations of observable states, we can estimate the hidden states. For designing Kalman Filter, we need state transfer functions and measurement functions. The matrix form of Kalman Filter is shown as follows.
+The variables for Kalman Filter to estimate are states, which are observable states and hidden states. From the observations of observable states, we can estimate the hidden states. For designing Kalman Filter, we need state transfer functions and measurement functions. The matrix form of Kalman Filter is shown as follows. The Kalman Filter consists of endless loop of state prediction and measurement update steps.
 </p>
 
 
@@ -118,6 +118,7 @@ $X$ : Estimate
 $P$ : Uncertainty Covariance  
 $F$ : State Transition Matrix  
 $U$ : Motion Vector  
+$Q$ : Covriance Noise  
 $Z$ : Measurement  
 $H$ : Measurement Function  
 $R$ : Measurement Noise  
@@ -125,17 +126,17 @@ $I$ : Identity Matrix
 $Y$ : Error  
 $K$ : Gain
 
-**Prediction**  
-$X^{\prime} = F \cdot X$  
-$P = F \cdot P \cdot F^T$  
+**State Prediction**  
+$X^{\prime} = F \cdot X + U$  
+$P^{\prime} = F \cdot P \cdot F^T + Q$  
 
 
 **Measurement Update**  
-$Y = Z - H \cdot X$  
-$S = H \cdot P \cdot H^T + R$  
-$K = P \cdot H^T \cdot S^{-1}$  
-$X^{\prime} = X + K \cdot Y$  
-$P^{-1} = (I - K \cdot H ) \cdot P$
+$Y = Z - H \cdot X^{\prime}$  
+$S = H \cdot P^{\prime} \cdot H^T + R$  
+$K = P^{\prime} \cdot H^T \cdot S^{-1}$  
+$X = X^{\prime} + K \cdot Y$  
+$P = (I - K \cdot H ) \cdot P^{\prime}$
 
 <p align='justify'>
 
