@@ -138,7 +138,7 @@ $X = X^{\prime} + K \cdot Y$
 $P = (I - K \cdot H ) \cdot P^{\prime}$
 
 <p align='justify'>
-The above Kalman Filter equations are valid for linear transformations, which does not change the distributions of the states. What if we have nonlinear transformations applied to the states? Extended Kalman Filter can be applied by linearizing the nonlinear transformations with first order Taylor Expansion. Thus, the Jacobian Matrix of the nonlinear transformation matrix needs to be computed to use the Kalman Filter equations above. 
+The above Kalman Filter equations are valid for linear transformations, which does not change the distributions of the states. What if we have nonlinear transformations applied to the states? **Extended Kalman Filter** can be applied by linearizing the nonlinear transformations with first order Taylor Expansion. Thus, the Jacobian Matrix of the nonlinear transformation matrix needs to be computed to use the Kalman Filter equations above. 
 </p
 
 
