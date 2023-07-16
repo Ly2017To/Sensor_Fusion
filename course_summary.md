@@ -138,7 +138,9 @@ $X = X^{\prime} + K \cdot Y$
 $P = (I - K \cdot H ) \cdot P^{\prime}$
 
 <p align='justify'>
-The above Kalman Filter equations are valid for linear transformations, which does not change the distributions of the states. What if we have nonlinear transformations applied to the states? *Extended Kalman Filter* can be applied by linearizing the nonlinear transformations with first order Taylor Expansion. Thus, the Jacobian Matrix of the nonlinear transformation matrix needs to be computed to use the Kalman Filter equations above. 
-</p
+The above Kalman Filter equations are valid for linear transformations, which does not change the distributions of the states. What if we have nonlinear transformations applied to the states? *Extended Kalman Filter* can be applied by linearizing the nonlinear transformations with first order Taylor Expansion. Thus, the Jacobian Matrix of the nonlinear transformation matrix needs to be computed to use the Kalman Filter equations above.
+</p>
 
-
+<p align='justify'>
+*Uncented Kalman Filter* is another way to deal with non linear transformations by approximating the distribution after a nonlinear transformation. This approximation is done in the following three steps. First, a set of sigma points with its corresponding weights is computed. Second, transform these sigma points according to the required non linear transformation. Third, compute the mean and variance of the approximation Gaussian distribution with the weights in the first step and the transformed points in the second step. The above distribution approximation corresponds to the state prediction step in Kalman Filter. In measurement update step, if the measurement function that maps the prediction state to measurement space is nonlinear, then the points calculated at state prediction step can be used as sigma points. The mean and variance to be mapped at measurement space can be calculated the same way as in the third step at the state prediction step. The mean and variance are updated based on the measurements from the sensors. The equations and mathematical details can be found at the paper called The Unscented Kalman Filter for Nonlinear Estimation. 
+</p>
