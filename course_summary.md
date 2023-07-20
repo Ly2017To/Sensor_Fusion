@@ -98,7 +98,11 @@ To engineering a collision avoidance system, we first transform the problem from
 </p>
 
 <p align='justify'>
+The corresponding points mentioned above are called key points. Tracking key points means following unique points in one image through a sequence of images taken by the same camera. First, key points need to be located in an image. Second, key points need to be described. Third, key points can be matched based on their descriptors on the images taken by the same camera. In this case, key points could be tail light corners, license plate corners and so on. There are various key points detectors and descriptors available. Here is a link of tutorial provided by OpenCV (https://docs.opencv.org/3.4/db/d27/tutorial_py_table_of_contents_feature2d.html). Accuracy, matching quality and speed are considered when selecting detectors and descriptors in real world applications.
+</p>
 
+<p align='justify'>
+[Introduction to the YOLO Family] (https://pyimagesearch.com/2022/04/04/introduction-to-the-yolo-family/).
 </p>
 
 
