@@ -1,7 +1,7 @@
 ## Introduction
 
 <p align='justify'>
-This course works on integrating data from multiple sensors into a world picture.
+This course works on integrating data from multiple sensors into a world picture. 
 </p> 
 
 <p align='justify'>
@@ -24,7 +24,7 @@ Let us make a sensor fusion example. Lidar has better resolution than radar, and
 </p> 
 
 <p align='justify'>
-Hardware is changing all over the time. Finding the best sensor solution is an open and ongoing problem.
+Sensor Fusion is also very important for self driving cars to achieve high automation level (https://www.csail.mit.edu/news/explained-levels-autonomy-self-driving-cars). Hardware is changing all over the time. Finding the best sensor solution is an open and ongoing problem. 
 </p> 
 
 ## Lidar Obstacle Detection
@@ -98,11 +98,11 @@ To engineering a collision avoidance system, we first transform the problem from
 </p>
 
 <p align='justify'>
-The corresponding points mentioned above are called key points. Tracking key points means following unique points in one image through a sequence of images taken by the same camera. First, key points need to be located in an image. Second, key points need to be described. Third, key points can be matched based on their descriptors on the images taken by the same camera. In this case, key points could be tail light corners, license plate corners and so on. There are various key points detectors and descriptors available. Here is a link of tutorial provided by OpenCV (https://docs.opencv.org/3.4/db/d27/tutorial_py_table_of_contents_feature2d.html). Accuracy, matching quality and speed are considered when selecting detectors and descriptors in real world applications.
+The corresponding points mentioned above are called key points. Tracking key points means following unique points in one image through a sequence of images taken by the same camera. First, key points need to be located in an image. Second, key points need to be described. Third, key points can be matched based on their descriptors on the images taken by the same camera. In this case, key points could be tail light corners, license plate corners and so on. There are various key points detectors and descriptors available. Here is a link of tutorial provided by OpenCV (https://docs.opencv.org/3.4/db/d27/tutorial_py_table_of_contents_feature2d.html). Accuracy, matching quality and speed are considered when selecting detectors and descriptors in real world applications. 
 </p>
 
 <p align='justify'>
-[Introduction to the YOLO Family] (https://pyimagesearch.com/2022/04/04/introduction-to-the-yolo-family/).
+Mapping lidar measurements with objects can be achieved by the following three steps. First, map the lidar measurements on the image plane. Second, detect the objects on the image obtained by the camera. Third, based on the positions of the objects detected, cluster the lidar measurements on the image plane. YOLO is a deep learning algorithm that detects objects efficiently. Here is a very nice YOLO introduction [Introduction to the YOLO Family] (https://pyimagesearch.com/2022/04/04/introduction-to-the-yolo-family/). According to the above measurements from lidar and camera, the closest object in front of the car can be found, from whose distance the time to collision can be computed. 
 </p>
 
 
