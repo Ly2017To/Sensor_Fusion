@@ -20,11 +20,7 @@ Lidar, Radar and Camera are the sensors introduced. Lidar stands for light detec
 
 
 <p align='justify'>
-Let us make a sensor fusion example. Lidar has better resolution than radar, and radar can measure the speed of objects directly. By combining lidar and radar, a better spatial understanding of the objects and their movements can be achieved.
-</p> 
-
-<p align='justify'>
-Sensor Fusion is also very important for self driving cars to achieve high automation level (https://www.csail.mit.edu/news/explained-levels-autonomy-self-driving-cars). Hardware is changing all over the time. Finding the best sensor solution is an open and ongoing problem. 
+Let us make a sensor fusion example. Lidar has better resolution than radar, and radar can measure the speed of objects directly. By combining lidar and radar, a better spatial understanding of the objects and their movements can be achieved. Sensor Fusion is also very important for self driving cars to achieve high automation level (https://www.csail.mit.edu/news/explained-levels-autonomy-self-driving-cars). Hardware is changing all over the time. Finding the best sensor solution is an open and ongoing problem. 
 </p> 
 
 ## Lidar Obstacle Detection
